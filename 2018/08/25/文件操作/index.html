@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>小白杨</title>
+  <title>python基础  -----&gt;  文本文件、二进制文件、Excel、xml文件操作 | 小白杨</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="python、爬虫、数据分析">
+  <meta name="description" content="文件输入输出 一、格式化函数Repr()函数格式：repr(object)返回值：返回一个字符串类型的数据说明：该函数，将参数中的对象进行处理，变为字符串类型，其中如果参数为字符串仍然会在外部加上””,其中内部的字符串的边界仍然存在。例如：Repr(“hello world\n”)“’hello world\n’”若为数值型在用print(repr(1))  =&amp;gt;1   实际上还是字符串，只">
+<meta name="keywords" content="python、爬虫、数据分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小白杨">
+<meta property="og:title" content="python基础  -----&gt;  文本文件、二进制文件、Excel、xml文件操作">
 <meta property="og:url" content="http://yoursite.com/2018/08/25/文件操作/index.html">
 <meta property="og:site_name" content="小白杨">
+<meta property="og:description" content="文件输入输出 一、格式化函数Repr()函数格式：repr(object)返回值：返回一个字符串类型的数据说明：该函数，将参数中的对象进行处理，变为字符串类型，其中如果参数为字符串仍然会在外部加上””,其中内部的字符串的边界仍然存在。例如：Repr(“hello world\n”)“’hello world\n’”若为数值型在用print(repr(1))  =&amp;gt;1   实际上还是字符串，只">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-25T09:29:14.504Z">
+<meta property="og:updated_time" content="2018-08-25T09:36:23.265Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小白杨">
+<meta name="twitter:title" content="python基础  -----&gt;  文本文件、二进制文件、Excel、xml文件操作">
+<meta name="twitter:description" content="文件输入输出 一、格式化函数Repr()函数格式：repr(object)返回值：返回一个字符串类型的数据说明：该函数，将参数中的对象进行处理，变为字符串类型，其中如果参数为字符串仍然会在外部加上””,其中内部的字符串的边界仍然存在。例如：Repr(“hello world\n”)“’hello world\n’”若为数值型在用print(repr(1))  =&amp;gt;1   实际上还是字符串，只">
   
     <link rel="alternative" href="/atom.xml" title="小白杨" type="application/atom+xml">
   
@@ -178,9 +181,43 @@
             <article id="post-文件操作" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python基础  -----&gt;  文本文件、二进制文件、Excel、xml文件操作
+    </h1>
+  
+
+        
+        <a href="/2018/08/25/文件操作/" class="archive-article-date">
+  	<time datetime="2018-08-25T09:29:14.504Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-25</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="文件输入输出"><a href="#文件输入输出" class="headerlink" title="文件输入输出"></a>文件输入输出</h3><hr>
+<p>一、格式化函数Repr()<br>函数格式：repr(object)<br>返回值：返回一个字符串类型的数据<br>说明：该函数，将参数中的对象进行处理，变为字符串类型，其中如果参数为字符串仍然会在外部加上””,其中内部的字符串的边界仍然存在。例如：<br>Repr(“hello world\n”)<br>“’hello world\n’”<br>若为数值型在用print(repr(1))  =&gt;1   实际上还是字符串，只是在输出时不显示引号<br>居左、居右、居中函数<br>Rjust()/ljust()/center()<br>函数格式：str.rjust(int)/str.ljust(int)/str.center()<br>返回值：无<br>说明：这三个函数为字符串的函数，该函数，将输出的字符串居右(居左/居中)对其，左侧(右侧/两侧)使用参数中规定的空格数来对齐<br>for i in range(1,11):<br>    print(‘{0:3d}{1:4d}{2:6d}’.format(i,i<strong>2,i</strong>3))   #后边的3d代表字符的宽度，若将d改为s代表字符串宽度<br>  1   1     1<br>  2   4     8<br>  3   9    27<br>  4  16    64<br>  5  25   125<br>  6  36   216<br>  7  49   343<br>  8  64   512<br>  9  81   729<br> 10 100  1000<br>在windows中文件都有扩展名<br>在linux中文件没有扩展名<br>二、文本文件的输入输出<br>文本文件的操作步骤：<br>1、打开文件<br>函数格式：open(file,mode,buffering,encoding)<br>返回值：返回一个文件对象，用来对文件进行操作。<br>说明：该函数主要是进行文件打开操作，如果文件不存在就再新建一个文件。如果存在就打开原有文件。<br>2、操作文件<br>1）写文件<br>函数格式：Write(str)<br>返回值：返回所写入文件的字符串中的字符数。<br>说明：该函数可以一次性写入一个字符串内容到文件中。每次写入文件时，如果使用的模式为’w’，意味着本次写入为覆盖式写入，即写入内容会将原来内容覆盖掉。如果使用的模式为’a+’，是将内容在原内容后边进行追加。<br>函数格式：Writelines(sequence)<br>返回值：无<br>说明：该函数可以使用列表、字符串、元组、集合、字典等作为参数，其中这些序列中的元素必须为字符串类型，同时也可以一次性写入多行字符串。<br>注意：在打开文件后是将文件读入缓冲区buffering中，在应’w’方式进行写入时，虽然是覆盖性写入，但只有在f.close()时才会将文件关闭，并将文件从缓冲区强制性写入文件中，若一次性写入太多时可以用  f.flush()  函数，该函数是刷新缓冲区，因为写入太多时缓冲区内存有限，所以用该方式避免机器挂掉。<br>2）读文件<br>函数格式：read([size])<br>返回值：返回按字节逐一读取的数据。<br>说明：该函数按照字节个数，逐一读取文件中的数据。如果没有规定读取字节数据的字节大小即size，一直读完文件中全部数据，如果规定了数据的字节大小，只读取规定字节数的内容。<br>函数格式：readline()<br>返回值：返回读取的一行字符串<br>说明：该函数一次能够读取文件中一行内容，如果需要读取全部内容，需要配合while循环使用，注意我们使用读取到的文件内容作为条件判断，即文件内容为空字符串时，退出循环。<br>函数格式：readlines()<br>返回值：返回一个包含多个字符串的列表。<br>说明：该函数能够一次性的将文件中的数据全部读取出来，然后将文件中每行字符串，作为一个列表的元素，将其组装成一个列表返回。<br>3、关闭文件<br>函数格式：close()<br>返回值：无<br>说明：当我们操作文件时，进行相关的写入操作，Python将数据写入文件之前，会将文件保存在文件缓存区中，在我们调用close()函数时，首先会将文件缓冲区内还没有写入到文件中的内容强制写入到文件中。<br>4、json格式处理<br>在Python中，提供了json模块可以实现对特殊数据结构的读写。比如：列表和字典。<br>1）将列表或字典转为json格式<br>Import json<br>Item=json.dumps(list/dict)<br>File.writelines(item)<br>上下两种形式等价<br>json.dump(list, file)<br>2)将文件中的列表或字典json字符串读取出来<br>f= open(file,mode)<br>json.load(f)<br>在将列表或字典转为json对象时，字典中的key值不管嵌套几层，若为数值型则都会转为字符串，而value值若有数值型则可以不用转为字符串型，对于列表，其中若为数值型则不转为字符串型4、json格式处理<br>在Python中，提供了json模块可以实现对特殊数据结构的读写。比如：列表和字典。json不支持元组，不支持除了str数据类型之外的key。<br>1）将列表或字典转为json格式<br>Import json<br>Item=json.dumps(list/dict)<br>File.writelines(item)<br>上下两种形式等价<br>json.dump(list, file)<br>例如：<br>import json<br>f = open(‘myfile.txt’,’w’,encoding=’UTF-8’)<br>dic={‘name’:’tom’,’age’:22,’address’:’zhengzhou’,22:’学号’}<br>result=json.dumps(dic)<br>for i in range(10):<br>    f.write(result+’\n’)<br>f.close()<br>2）将文件中的列表或字典json字符串读取出来<br>f= open(file,mode)<br>json.load(f)  #对应dump方式，在多次写入时读出不能用多次执行load来完成<br>json.loads(f)  # 对应dumps方式<br>例如：<br>import json<br>f = open(‘myfile.txt’,’r’,encoding=’UTF-8’)<br>for line in f:<br>    print(json.loads(line))<br>f.close()<br>在将列表或字典转为json对象时，字典中的key值不管嵌套几层，若为数值型则都会转为字符串，而value值若有数值型则可以不用转为字符串型，对于列表，其中若为数值型则不转为字符串型。<br>json如果要写入多个元素，可以先将元素dumps序列化， f.write(序列化+‘\n’)写入文件，读出元素的时候，应该先按行读文件，在使用loads将读出来的字符串转换成对应的数据类型。<br>5、文件及路径操作函数<br>1）isfile()与isdir()<br>函数格式：os.path.isfile(file)<br>返回值：bool<br>说明：根据传入的参数，判断该内容是否为文件类型。如果是文件类型返回True，如果不是返回False<br>isdir()<br>函数格式：os.path.isdir(path)<br>返回值：bool<br>说明：根据传入的参数，判断内容是否为目录类型，如果是目录就返回True，如果不是返回False<br>2）创建路径 mkdir()、删除路径removedirs() (os模块)<br>函数格式：os.mkdir(path)<br>返回值：无<br>说明：如果指定路径中不存在该目录，那么创建该目录。注意，如果存在同名目录，则报错<br>函数格式：os.removedirs(path)，os.rmdir(path)<br>返回值：无<br>说明：删除指定的目录，如果该目录中存在文件或子目录，都不允许删除。否则报错。<br>两者的区别：<br>Os.removedirs(path)  可以一次移除多个<br>Os.rmdir(path)  一次只能创建一个<br>3）删除文件 remove() （os模块）<br>函数格式：os.remove(file)<br>返回值：无<br>说明：删除指定的文件，如果该文件不存在则报错。如果文件存在就删除。<br>4）判断文件/目录是否存在 exists()<br>函数格式：os.path.exists(file/path)<br>返回值：bool<br>说明：判断指定的文件或路径是否存在，如果存在返回True，如果不存在返回False。<br>5)返回指定路径下，所有子路径 listdir()<br>函数格式：os.listdir(path)<br>返回值：list<br>说明：返回指定路径下，所有的子路径。<br>6）返回当前路径 getcwd()<br>函数格式：os.getcwd()<br>返回值：path<br>说明：返回当前程序所在的绝对路径<br>7）返回文件大小 getsize()<br>函数格式：path.getsize()<br>返回值：int<br>说明：返回指定文件的大小，单位是字节<br>8）重命名 rename()<br>函数格式：os.rename(oldfilename/oldpath,newfilename/newpath)<br>返回值：无<br>说明:将指定的文件名或目录名进行重命名。<br>9）替换 replace()<br>函数格式：os.replace(src,dst)<br>返回值：无<br>说明：使用目标文件替换掉原文件</p>
+<p>注意：在Python3.x版本中，将pathlib作为内置模块进行了引入。我们可以通过使用from pathlib import Path，使用。<br>其使用的前提为：需要先创建一个path对象，然后对其进行操作。<br>p = Path(‘c:\pythoncode\etc’)<br>三、二进制文件的输入输出<br>1、struct和pickle<br>1）使用struct模块，进行数据的输入输出<br>使用步骤：<br>第一，对要写入到文件中的各种类型数据，进行统一打包<br>struct.pack(‘if’,10,12.4),其中，i:代表了整数，f：代表了浮点数<br>？：代表布尔型<br>第二，使用write()写入，写入后以二进制的方式进行文件存储。<br>第三，读取时，首先采用struct.unpack()来解包里面包含的相关数据，返回一个序列，即写入时的顺序，与读取时的顺序应该一致。<br>注意：需要将所有写入的数据，一次性都封装到一个bytes中，因为在Python中没有byte的概念，所以需要第三方的模块进行封装。<br>打包过程：<br>import struct<br>a,b,c=10,10.99,True<br>sn=struct.pack(‘if?’,a,b,c)<br>f=open(‘myfile.dat’,’wb’)<br>f.write(sn)<br>f.close()<br>解包过程：<br>import struct<br>f=open(‘myfile.dat’,’rb’)<br>sn=f.read()<br>print(struct.unpack(‘if?’,sn))<br>2）使用pickel模块，进行数据的输入输出<br>使用步骤：<br>第一，对要写入文件中的数据，进行逐一的写入。例如：<br>import pickle<br>f=open(‘myfile.dat’,’wb’)<br>dic={‘id’:’12345’,’name’:’tom’,2:’学号’}<br>pickle.dump(dic,f)<br>pickle.dump(dic,f)<br>f.close()<br>result=pickle.dumps(dic)   # 采用dumps()方式写入<br>f.write(result)<br>第二，读取数据时，同理，需要逐一的读取。例如：<br>import pickle<br>f=open(‘myfile.dat’,’rb’)<br>while True:<br>    try:<br>        print(pickle.load(f))   #采用load方式进行读取<br>    except Exception as e:<br>        print(‘文件读取完毕’)<br>        break<br>f.close()<br>注意，在使用时，我们能够观察到该模块的dump和load函数，与前面所学的json模块的函数一致，在Python中json与pickle都能够实现序列化和反序列化的两个模块。<br>在实际的使用中，推荐使用pickle 模块。<br>补充：shelve序列化：shelve只提供给我们一个open方法，是用key来访问的，使用起来和字典类似<br>import shelve<br>f = shelve.open(‘myfile1’)<br>f[‘key’]=[1,2,3,4,5,6]<br>f.close()<br>f = shelve.open(‘myfile’)<br>print(f[‘key’])<br>2、文件定位<br>Seek()仅用在文本文件中<br>函数格式：seek(n)<br>返回值：返回指定的位置<br>说明：通过指定元素的位置，将文件指针移动到该位置。<br>seek()函数有三个固定值，分别为：0,1,2<br>0：文件的开头<br>1：文件当前的位置<br>2：文件的结尾位置<br>seek(0,2):代表着将指针定位到文件尾，然后进行添加操作<br>seek(0,1):代表着在当前指针的位置，进行替换</p>
+<p>补充：对文件的读取时，如果文件大小未知，切忌不要使用read(),readline()，readlines()将文件内容一次性读取到内存中。因为有可能文件内容过多，造成读取时的IO阻塞。建议，将文件分多次分批读入内存中。我们通常可以先获取到文件大小，<br>size = path.getsize(‘myfile.txt’)<br>根据其大小来判断我们采用何种方式进行读取数据内容。<br>对未知文件大小进行读取时应使用以下方法：<br>f=open(‘myfile.txt’,’r’)<br>while True:<br>content=f.read(1024)<br>if content==’’:<br>break<br>print(content)<br>f.close()<br>获取文件大小，所得到的为字节数，除以1024后可得到文件大小<br>from os import path<br>f=open(‘myfile.txt’,’r’)<br>size=path.getsize(‘myfile.txt’)<br>print(size)<br>f.close()<br>打开文件的两种方式：<br>with open(‘myfile.dat’,’rb’) as f:<br>相当于f=open(‘myfile.dat’,’rb’)   f.close()<br>四、Python对Excel文件的操作<br>1、需要三个主要的模块<br>xlrd:用来读取Excel文件中的内容<br>xlwt：用来生成Excel文件<br>xlutils：用来实现Excel文件的复制<br>2、<br>1)xlrd<br>open_workbook()<br>函数格式：open_workbook(文件名)<br>返回值：返回Excel对象<br>说明：打开指定的Excel文件，生成一个Excel对象用来实现读取行、列及单元格内容<br>函数格式：sheet_by_name(sheet页面名)/sheet_by_index(sheet页索引位，默认从0开始)<br>返回值：sheet页对象<br>说明：找到指定的sheet页，生成一个对应的sheet页对象，对其内部的数据进行检索<br>函数格式：sheet.cell(rownum,colnum)<br>返回值：返回指定行列的单元格对象，如果要获取其中的内容，调用value属性。<br>说明：通过指定行、列，能够确认一个单元格。<br>2)xlwt<br>函数名称：Workbook()<br>返回值：返回一个新创建的Excel空对象<br>说明：该函数用来生成一个Excel对象，但是该对象没有任何内容<br>函数名称：add_sheet(sheet名字)<br>返回值：返回一个新创建的sheet页对象<br>说明：该函数用来新增一个空的sheet页对象<br>函数名称：write(row, col, value)<br>返回值：无<br>说明：对指定的行列单元格内，写入value内容。<br>3)xlutils<br>函数格式：copy(Excel对象)<br>返回值：返回一个指定对象的副本<br>说明：在Python中对Excel的修改，都是生成一个对应的副本，修改后保存。<br>函数格式：get_sheet(索引位)<br>返回值：返回一个指定对象副本中的sheet页<br>说明：我们实际修改的数据，都是位于sheet页中。因此要获取到指定的sheet页。<br>五、Python对XML文件的解析<br>1、XML解析的两种方式：DOM与SAX<br>DOM：文档对象模型，是Python处理XML文件的标准模式。一个DOM的解析器在解析XML文档时 ，一次性读入整个文档，把文档中的所有元素（标签和文本）保存在内存中的一个树形结构，然后我们可以利用DOM提供的各种函数，来读取或修改文档中的内容。<br>在看元素类型时，标签类型为1，文本类型为3<br>SAX：是一种时间驱动的API，利用SAX解析XML 。主要使用解析器负责读取XML文档，并向事件处理器发生事件，比如：元素开始、元素结束。<br>常用在：1）大型文档的处理；2）只需要文件的部分内容，或者从文件中得到特定的部分；3）建立自己的对象模型。<br>dom与sax对比：<br>1)DOM解析需要读取整个文档到内存中，并且将所有元素保存到树形结构。那也就意味着，可以根据树形结构导航到任意节点，获取其相关内容。<br>2)SAX解析文档，将文档边读入，边解析的方式，不需要一次性读入全部文档内容，只需要读入一部分即可。同时，因为其边读入边解析的工作方式，能够适应大文件的解析，提高解析效率。</p>
+<p>2、SAX解析文件步骤：<br>1)创建解析器<br>parser = sax.make_parser()<br>2)读取xml文档<br>xml.sax.parse(xmlfile)<br>3)设置ContentHandler对象，重写startDocument、endDocument、startElement、endElement方法。<br>startDocument():文档载入时调用，文档开始<br>endDocument()：当解析器达到文档结尾时调用<br>startElement(name,attrs):当遇到XML标签时调用，name是标签的名字，attrs标签的属性字典<br>endElement(name):当遇到XML标签结束时调用，name是标签名<br>4)使用SAX解析文件，需要为解析器配置ContentHandler，定义了如何解析标签，以及处理标签间文本内容的业务逻辑。<br>carhandler = CarHandler()<br>parser.setContentHandler(carhandler)<br>补充：在引目录时也可以引绝对路径，不过在中间要用双斜杠来表示，不能用单斜杠，因为单斜杠会被当做转义字符。<br>当需要用两层for循环以上时尽量用递归进行替换for循环<br>六、配置文件（ini）<br>import configparser<br>def found(config,filename):<br>    config[‘userkey’]={<br>        ‘name’:’tom’,<br>        ‘password’:’12345’,<br>        ‘age’:22<br>    }<br>    savefile(config,filename)<br>def add(config,filename):<br>    config.add_section(‘info’)   # 增加一个section小节<br>    config.set(‘info’,’address’,’zhengzhou’)  # 根据setion添加option<br>    savefile(config,filename)<br>def remove(config,filename):<br>    config.remove_section(‘info’)    # 删除指定的section,小节中的option也会被删除<br>    config.remove_option(‘userkey’,’name’)  # 删除指定section中的option<br>    savefile(config,filename)<br>def savefile(config,filename):<br>    with open(filename,’w’) as f:<br>        config.write(f)<br>if <strong>name</strong>==’<strong>main</strong>‘:</p>
+<pre><code># 生成一个配置文件对象
+config = configparser.ConfigParser()  
+filename = &apos;user1.ini&apos;
+found(config,filename)
+add(config,filename)
+remove(config,filename)
+# 得到配置文件中所有的小节
+print(config.sections())
+# 根据指定的小节名称得到其内部所有的options选项
+print(config.options(&apos;userkey&apos;))
+# 判断指定的小节名称是否在配置文件中存在
+print(&apos;userkey&apos; in config)
+# 通过制定的小节名称，以及options的key，得到对应的value
+</code></pre><p>print(config[‘userkey’][‘age’])<br>七、哈希算法<br>Md5()加密：<br>import hashlib<br>m = hashlib.md5()<br>m.update(‘i am is student’.encode(‘UTF-8’))<br>print(m.hexdigest())<br>加盐md5,秘钥hahaha<br>import hashlib<br>m = hashlib.md5(‘hahaha’,encode(‘UTF-8’))<br>m.update(‘i am is student’.encode(‘UTF-8’))<br>print(m.hexdigest())<br>校验内容一致性：<br>import hashlib<br>m = hashlib.md5()<br>m.update(‘i am is student’.encode(‘UTF-8’))<br>print(m.hexdigest())<br>m1 = hashlib.md5()<br>m1.update(b’i am ‘)<br>m1.update(b’is student’)<br>print(m1.hexdigest())</p>
+
       
 
       
@@ -277,14 +314,14 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          (no title)
+          python基础  -----&gt;  包与异常、模块
         
       </div>
     </a>
   
   
     <a href="/2018/08/25/函数/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">python基础  -----&gt;  函数</div>
       <i class="icon-circle-right"></i>
     </a>
   

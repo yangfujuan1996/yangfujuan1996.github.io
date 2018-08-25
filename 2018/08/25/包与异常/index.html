@@ -6,17 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>小白杨</title>
+  <title>python基础  -----&gt;  包与异常、模块 | 小白杨</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="python、爬虫、数据分析">
+  <meta name="description" content="包与模块 异常 一、包与模块1、模块基本概念：在Python中进行Python定义和声明的文件，以.py结尾。使用import或from   import导入的文件，我们成为模块。2、模块的优势首先，使用模块，可以将常用的功能和变量，统一分类存储在不同的文件中，在使用时进行导入。提供了代码的可维护性。其次，使用模块因为将常用功能进行了统一调用，提供了代码的复用性最后，解决了在同一个文件中，方法和变">
+<meta name="keywords" content="python、爬虫、数据分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小白杨">
+<meta property="og:title" content="python基础  -----&gt;  包与异常、模块">
 <meta property="og:url" content="http://yoursite.com/2018/08/25/包与异常/index.html">
 <meta property="og:site_name" content="小白杨">
+<meta property="og:description" content="包与模块 异常 一、包与模块1、模块基本概念：在Python中进行Python定义和声明的文件，以.py结尾。使用import或from   import导入的文件，我们成为模块。2、模块的优势首先，使用模块，可以将常用的功能和变量，统一分类存储在不同的文件中，在使用时进行导入。提供了代码的可维护性。其次，使用模块因为将常用功能进行了统一调用，提供了代码的复用性最后，解决了在同一个文件中，方法和变">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-08-25T09:31:50.089Z">
+<meta property="og:updated_time" content="2018-08-25T09:36:10.850Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小白杨">
+<meta name="twitter:title" content="python基础  -----&gt;  包与异常、模块">
+<meta name="twitter:description" content="包与模块 异常 一、包与模块1、模块基本概念：在Python中进行Python定义和声明的文件，以.py结尾。使用import或from   import导入的文件，我们成为模块。2、模块的优势首先，使用模块，可以将常用的功能和变量，统一分类存储在不同的文件中，在使用时进行导入。提供了代码的可维护性。其次，使用模块因为将常用功能进行了统一调用，提供了代码的复用性最后，解决了在同一个文件中，方法和变">
   
     <link rel="alternative" href="/atom.xml" title="小白杨" type="application/atom+xml">
   
@@ -178,9 +181,26 @@
             <article id="post-包与异常" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      python基础  -----&gt;  包与异常、模块
+    </h1>
+  
+
+        
+        <a href="/2018/08/25/包与异常/" class="archive-article-date">
+  	<time datetime="2018-08-25T09:31:50.089Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-25</time>
+</a>
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="包与模块-异常"><a href="#包与模块-异常" class="headerlink" title="包与模块 异常"></a>包与模块 异常</h3><hr>
+<p>一、包与模块<br>1、模块<br>基本概念：在Python中进行Python定义和声明的文件，以.py结尾。使用import或from   import导入的文件，我们成为模块。<br>2、模块的优势<br>首先，使用模块，可以将常用的功能和变量，统一分类存储在不同的文件中，在使用时进行导入。提供了代码的可维护性。<br>其次，使用模块因为将常用功能进行了统一调用，提供了代码的复用性<br>最后，解决了在同一个文件中，方法和变量重名的问题。<br>3、导入时的问题<br>如果导入了与文件同名的函数（方法名相同，函数个数相同）时，需要使用模块名调用函数，与文件中的函数进行区分，例如：<br>import my<br>my.show()<br>def show():<br>  pass<br>show()<br>4、模块可以在Python文件中，实现多次import导入，但是只有第一次导入时才真正将模块中的内容运行、方法载入，其他再进行导入时，Python解析器会先检测是否已经载入该模块，如果载入就不在执行相关操作。<br>5、总结：<br>模块载入一共分三个步骤：<br>1）为模块的导入，创建命名空间（划分新的内存地址），被载入的文件按照全局作用域来使用。<br>2）模块载入后，将在上一步操作中创建的命名空间中，执行模块中的代码<br>3）创建一个模块的名字，来引用模块所在的命名空间。my.show()<br>6、当使用from  import引入多个模块时，同时多个模块存在同名函数，那么在程序中调用该函数时，以程序导入的最后一个模块的函数为准。<br>7、包：<br>1）概念：包在Python中定义为可以包含多个模块文件的目录，其中必须要包含一个名为“<strong>init</strong>.py”的文件，用来初始化包。<br>2）包在调用的使用，首先会初始化<strong>init</strong>.py文件，主要功能为包中模块运行时提供所需要的相关数据，比如：数据库用户名称、密码、地址等内容。<br>补充：<br><code>&lt;!--我是注释--&gt;</code>   是xml写注释的方式<br>在调用模块时，若函数名重名但参数不一致时Python会认为两个函数是不同的函数，若参数一致且重名时Python只会执行它自身定义的函数，此时引用的外部函数将不会被执行。<br>可以给模块起别名，例如from my import show as s<br>但是在使用时必须用别名<br>二、异常<br>1、概念：指因程序出错在正常的执行流程之外，采取的行为。异常是一个事件，会在程序的执行过程中执行，并影响程序的执行。<br>2、异常的阶段<br>1）产生异常（例如：代码错误、业务逻辑错误）<br>2）处理异常（例如：将异常提示更加可理解、增强代码的健壮性）<br>3、常见的异常类<br>Exception:Python中所有异常的父类。<br>NameError：尝试访问一个没有申明的变量<br>keyError:请求一个不存在的字典关键字<br>IndexError:索引超出序列范围<br>IOError:输入输出错误（比如你要读的文件不存在）<br>ValueError:传给函数的参数类型不正确<br>AttributeError:尝试访问未知的对象属性<br>EOFError:发现一个不期望的文件尾<br>ZeroDivisionError:除数为0<br>SyntaxError:语法错误<br>4、异常处理流程<br>基本语法：<br>Try:<br>可能会产生异常的代码<br>Except  对应的异常 as 别名：<br>异常处理语句<br>说明：在try中，放置可能会产生错误的相关代码，except后标明对应的异常类型，一旦try中产生相关异常，except后声明的异常类能够对应捕获，执行相关异常处理语句。如果try外边后续还有其他语句，会继续执行。但在产生异常时，出现异常的语句后，如果还有其他语句则不会执行。<br>Try:<br>可能会产生异常的代码<br>Except 对应的异常 as 别名：<br>异常处理语句<br>Else:<br>程序代码<br>说明：在此结构中，如果try中的代码出现异常，则使用except后边声明的异常类进行捕获处理，如果没有异常，则执行else内部的代码。<br>Try:<br>可能会产生异常的代码<br>Except 对应的异常 as 别名：<br>异常处理语句<br>Except 对应的异常 as 别名：<br>异常处理语句<br>…<br>Else:<br>程序代码<br>说明：每个except后边只能有一个异常，该形式为一个代码后边有多个异常；当try中有多行代码可能会出现不同的异常，那么使用多个except与之对应，根据产生异常的顺序来依次捕获处理。<br>Try:<br>可能会产生异常的代码<br>Except  对应的异常 as 别名：<br>异常处理语句<br>Finally:<br>代码<br>说明：当异常捕获处理流程中，使用了finally来控制，表明不管是否出现异常进行捕获，最后代码都将允许finally内部的语句。<br>注意：finally中的语句，不管前面的代码做何种操作。比如：break、return、exit等都会执行完finally内部的代码后，才会实现。<br>Try:<br>Raise keyError<br>Finally:<br>代码<br>说明：在此时是先执行finally中的语句，后抛出异常；若在try中不是抛出的异常，而是其他代码，并且没有错误时，会先执行try中的代码，后执行finally中的内容。<br>5、异常的分类<br>在Python中所有的异常都继承自BaseExcept，如下：<br>          |——&gt;KeyboardInterrupt（键盘中断异常）<br>          |<br>BaseExcept |——&gt;SystemExit(系统退出异常)<br>          |<br>          |——&gt;Except（其他所有异常的父类）<br>强制进行结束程序时可以用Ctrl+C,会抛出KeyboardInterrupt<br>其中：keyboardInterrupt在使用强制中断程序时产生。<br>SystemExit在使用sys.exit()函数时产生。<br>6、主动抛出异常<br>Raise 异常类对象实例或自定义异常类实例<br>Raise IOError(IO错误’)<br>7、finally的替换写法<br>with open(‘myfile.txt’,’r’) as f:<br>    for line in f:<br>        print(line)<br>其中打开的文件对象f，在执行完内容的读取后，被强制性关闭。及时在读取过程中，出现错误，也会被关闭。<br>8、使用异常机制的优势<br>第一，把错误控制与业务逻辑进行区分，增强程序的可读性和健壮性。<br>第二，代码结构更加清晰，复杂的业务流程的实现更加便利<br>第三，程序的容错性更强，不会因为一个小bug导致整体崩溃。<br>9、assert 断言<br>语法格式：assert 表达式，断言内容。代码如下<br>try:<br>    assert 1==2,’1 不等于 2’<br>except AssertionError as ae:<br>    print(‘{}{}’.format(ae.__class__.__name__, ae))<br>如果断言表达式为真，则正常执行，如果不为真，则返回断言内容，作为异常捕获的输出结果。<br>三、补充模块<br>1、collections模块<br>在内置数据类型（dict、list、set、tuple）的基础上，collections模块还提供了几个额外的数据类型：Counter、deque、defaultdict、namedtuple和OrderedDict等<br>1）namedtuple: 生成可以使用名字来访问元素内容的tuple<br>2）deque: 双端队列，可以快速的从另外一侧追加和推出对象<br>from collections import deque<br>dq = deque()<br>for i in range(5):<br>    dq.append(i)<br>print(dq)<br>dq.appendleft([1,2,3,4])  # 从左侧添加元素<br>print(dq)<br>print(dq.popleft())  # 从左侧弹出元素<br>print(dq)<br>3）Counter: 计数器，主要用来计数<br>from collections import Counter<br>c=Counter([1,2,3,4,3,2,4,5,7,3,2])<br>print(c)   # 返回的是一个字典<br>print(c[2])  #可以根据其key值得到对应出现的次数<br>4）OrderedDict: 有序字典<br>2、time模块<br>表示时间的三种方式<br>在python中，通常有三种方式来表示时间：时间戳，元组(struct_time),格式化的时间字符串<br>1）时间戳(timestamp) ：通常来说，时间戳表示的是从1970年1月1日00:00:00开始按秒计算的偏移量。我们运行“type(time.time())”，返回的是float类型<br>2）格式化的时间字符串(Format String): ‘1999-12-06’<br>%y 两位数的年份表示（00-99）<br>%Y 四位数的年份表示（000-9999）<br>%m 月份（01-12）<br>%d 月内中的一天（0-31）<br>%H 24小时制小时数（0-23）<br>%I 12小时制小时数（01-12）<br>%M 分钟数（00=59）<br>%S 秒（00-59）<br>%a 本地简化星期名称<br>%A 本地完整星期名称<br>%b 本地简化的月份名称<br>%B 本地完整的月份名称<br>%c 本地相应的日期表示和时间表示<br>%j 年内的一天（001-366）<br>%p 本地A.M.或P.M.的等价符<br>%U 一年中的星期数（00-53）星期天为星期的开始<br>%w 星期（0-6），星期天为星期的开始<br>%W 一年中的星期数（00-53）星期一为星期的开始<br>%x 本地相应的日期表示<br>%X 本地相应的时间表示<br>%Z 当前时区的名称<br>%% %号本身<br>3）元组(struct_time) ：struct_time元组共有9个元素共九个元素:(年，月，日，时，分，秒，一年中第几周()，一年中第几天等）<br>tm_year=2018, tm_mon(1-12)=8, tm_mday(1-31)=8, tm_hour(0-23)=0, tm_min(0-59)=0, tm_sec(0-59)=0, tm_wday(0-6,0表示周一)=2, tm_yday(一年中的第几天)=220, tm_isdst(是否夏令时，默认为0)=-1)<br>import time<br>time.sleep(s)  # s位休眠时间，单位为秒<br>print(time.time())  # 获取当前时间戳<br>print(time.strftime(‘%Y-%m-%d %A %H:%M:%S’,time.localtime()))  # 将格式化时间转为年-月-日格式<br>p=time.strptime(‘2018-08-08’,’%Y-%m-%d’)   # 将指定时间转化为格式化时间<br>print(time.mktime(p))    # 将格式化时间转化为时间戳<br>p2=time.localtime(1533657600.0)   # 将时间戳转为格式化时间<br>print(time.strftime(‘%Y-%m-%d’,p2))  # 格式化时间转为指定形式的时间<br>3、random模块<br>import random<br>print(random.random())  #产生大于0小于1之间的小数<br>print(random.uniform(1,3))  # 产生1到3之间的浮点数<br>print(random.randrange(1,10,2)) #产生1到10之间的奇数<br>print(random.randint(1,10))  # 产生1到10之间的整数<br>print(random.choice([1.2,2.3,3.4,4.5,5.6,6,7,8,9,10]))  # 从列表中随机抽一个数进行输出<br>print(random.sample([1,2,3,[4,5,6,9]],2))  # 列表元素任意两个组合<br>item=[1,2,3,4,5,6,7,8]<br>random.shuffle(item)   # 打乱原列表次序<br>print(item)<br>4、sys模块<br>import sys<br>print(sys.argv)  # 命令行参数List，第一个元素是程序本身路径<br>print(sys.version)  # 获取Python解释程序的版本信息<br>print(sys.path) #返回模块的搜索路径，初始化时使用PYTHONPATH环境变量的值<br>print(sys.platform)   # 返回操作系统平台名称<br>sys.exit(n)   # n=0代表正常退出，n=1代表错误退出</p>
+
       
 
       
@@ -284,7 +304,7 @@
   
   
     <a href="/2018/08/25/文件操作/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+      <div class="article-nav-title">python基础  -----&gt;  文本文件、二进制文件、Excel、xml文件操作</div>
       <i class="icon-circle-right"></i>
     </a>
   
