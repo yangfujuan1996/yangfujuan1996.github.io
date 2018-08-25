@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | 小白杨</title>
+  <title>小白杨</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="python、爬虫、数据分析">
-<meta property="og:type" content="website">
+  <meta name="description" content="title: python爬虫基础Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask m">
+<meta name="keywords" content="python、爬虫、数据分析">
+<meta property="og:type" content="article">
 <meta property="og:title" content="小白杨">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/08/14/Python-Spider/index.html">
 <meta property="og:site_name" content="小白杨">
+<meta property="og:description" content="title: python爬虫基础Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask m">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-08-25T07:53:54.442Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="小白杨">
+<meta name="twitter:description" content="title: python爬虫基础Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask m">
   
     <link rel="alternative" href="/atom.xml" title="小白杨" type="application/atom+xml">
   
@@ -174,64 +178,171 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Python-Spider" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="title-python爬虫基础"><a href="#title-python爬虫基础" class="headerlink" title="title: python爬虫基础"></a>title: python爬虫基础</h2><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h3 id="python爬虫基础"><a href="#python爬虫基础" class="headerlink" title="python爬虫基础"></a>python爬虫基础</h3><hr>
+<p>一、网络原理<br>1、HTTP与HTTPS的区别<br>HTTP：我们成为超文本传输协议，主要用来实现网络传输超文本到本地浏览器，实现高效且准确的超文本传输。目前HTTP版本为1.1<br>HTTPS：我们认为就是以安全为目标的HTTP通道，即在HTTP协议的基础上加入了SSL层，简称HTTPS。<br>SSL的作用：<br>第一、为HTTP传输文件提供安全的传输通道<br>第二、确认网站的真实性，通过HTTPS访问的网站都需要获取到CA认证。<br>2、OSI七层模型：<br>第七层应用层<br>协议：DHCP • DNS • FTP • Gopher • HTTP • IMAP4 • IRC • NNTP • XMPP • POP3 • SIP • SMTP • SNMP • SSH • TELNET • RPC • RTCP • RTSP • TLS • SDP • SOAP • GTP • STUN • NTP • 更多<br>第六层表示层<br>不用协议<br>第五层会话层不用协议<br>第四层传输层<br>协议：TCP • UDP • DCCP • SCTP • RTP • RSVP • PPTP • 更多<br>第三层网络层<br>协议：IP (IPv4 • IPv6) • ARP • RARP • ICMP • ICMPv6 • IGMP • RIP • OSPF • BGP • IS-IS • IPsec • 更多<br>第二层数据链路层<br>协议： 802.11 • 802.16 • Wi-Fi • WiMAX • ATM • DTM • 令牌环 • 以太网 • FDDI • 帧中继 • GPRS • EVDO • HSPA • HDLC • PPP • L2TP • ISDN • 更多<br>第一层物理层<br>协议： RS-443 、RS-232C、RS-485 、理-2593<br>3、HTTP的请求机制<br>第一、有客户端（浏览器）发出请求<br>第二、通过网络传输，到指定的服务器地址<br>第三、服务器接收相关请求并进行解析<br>第四、服务器将最终结果响应回客户端<br>第五，客户端接收到服务器响应后，通过浏览器解析，最终将内容进行展现<br>4、客户端访问服务器，发出请求，有四部分构成<br>第一，请求方法（request method），默认为get方式。只有在表单提交和文件上传时为post方法。<br>第二，请求网址（request url），即在浏览器中输入的网路地址。<br>第三，请求头（request header），用来标识为一个浏览器正常的访问<br>第四，请求体（request body），用来传输到服务器端的相关数据<br>5、请求方法中get与post的区别<br>第一、使用get方式提交请求时，相关数据会作为url的参数被一起进行提交，我们可以直接在地址栏中观察到相关数据。而采用post方式请求的url不会包含这些数据，而是直接通过表单提交到服务器。<br>第二、get方式提交请求，对于提交的数据大小不能大于1024字节，而post方式提交数据，没有大小的限制。<br>总之，如果提交的信息比较敏感或者字节较大时，需要使用post方式；如果只是普通的请求使用get方式。<br>二、HTML网页结构<br>1、HTML基本构成<br>HTML有三个标签来构成基本结构：</p>
+<p><html>:作为HTML文件的根标签，所有的页面中的标签和内容都要在HTML标签的范围内。</html></p>
+<p><head>：作为HTML文件的头部标签，相关页面的信息、编码、引导外部的CSS文件和JS文件，都需要放置在head标签中。</head></p>
+<p><body>：body标签中的内容，就是我们爬虫需要解析的主体。所有需要在页面上展现的内容，都会放置在该标签中。<br>2、常见的HTML标签<br>1）h1…h6：标题标签，用来显示标题，h1最大，h6最小。</body></p>
+<p></p><h1></h1> —–<h6></h6>   成对出现<br>2）<p>：段落标签。用来对文本内容进行分段。<br>3）<a>：链接标签。用来跳转到指定的网址。<br><a target="" href="URL">链接地址</a><br>其中参数target，_self:在自身的窗口重新打开指定的网址<br>_blank：在一个新窗口中打开指定的网址<br>4）<img>：图片标签。用来载入指定位置的图片，通常可以接收的图片类型：JPG、png、gif、bmp<br><img src="" alt=""><br>其中：src：指定图片的具体位置<br>      alt：其中的内容，作为图片无法载入时，显示的内容。<br>5）表格标签：table、tr、th、td</a></p>
+<p><table>：表格标签，所有表格中的行和单元格内容都必须放置在内部。</table></p>
+<p><tr>:表格行，代表表格一行</tr></p>
+<p><th>:表格头，代表表格的标题行</th></p>
+<p><td>：表格单元格，代表表格中的每个单元内容<br>6）列表<br>有序列表：</td></p>
+<p><ol><br>   <li></li><br></ol><br>无序列表:</p>
+<p><ul><br>   <li></li><br></ul><br>自定义列表：</p>
+<p><dl><br>   <dt><br>      <dd></dd><br>   </dt><br></dl><br>7)div与span<br>div：块级元素，用来实现页面布局。自身没有任何效果<br>span:内联元素，用做文本容器。<br>8）表单</p>
+<p><form name="表单名" action="URL" method="get/post"><br>默认情况，如果没有声明method属性，缺省值为get</form></p>
+<p><input type=""><br>输入标签，type属性：<br>text:文本框<br>password：密码框<br>checkbox：复选框<br>radio：单选框<br>submit：提交按钮<br>reset：重置按钮<br>button：按钮<br>file:文件上传</p>
+<p><textarea cols="列数" rows="行数">：文件区标签<br>9)常用操作<br>X<sub>2</sub>    下标<br>Y<sup>2</sup>    上标<br><del>welcome</del>    删除<br><u>welcom</u>    下划线</textarea></p>
+<p><hr>     水平线<br>在HTML中输入的空格不管有几个默认为一个空格，可以用&nbsp;代表一个空格，在想要多个空格时可以用多个字符。<br>在写表单时，当有注册按钮时，可以用<input type="submit" name="””" value="注册"><br>其中name中内容为input的名字，而value的值则是按钮的名称。<br>三、网络爬虫—urllib库<br>1、urllib库的基本使用<br>import urllib.request<br>函数格式：urllib.request.openurl(url, data, timeout)<br>参数说明：<br>url：指定的请求网址<br>data：请求时提交给服务器端的数据，如果在openurl中使用了data参数，那么提交方式为post，默认情况下为get。<br>timeout：指定连接url的超时时间，单位为秒。<br>response = urllib.request.openurl()函数返回一个HTTPResponse对象<br>我们可以使用response对象中的相关方法：<br>read()读取响应体中的内容<br>status/getcode()返回响应码<br>reason 返回响应信息的内容<br>info()返回响应头信息<br>geturl()返回请求的url地址<br>2、Request请求对象<br>req = urllib.request.Request(url,data,headers,method)<br>参数说明：<br>url：指定的请求网址<br>data：请求时提交给服务器端的数据，如果在openurl中使用了data参数，那么提交方式为post，默认情况下为get。<br>headers：请求对象的头信息，用来将一个爬虫伪装成一个普通的浏览器请求，主要设置user-agent<br>method：请求的方式，默认为get，可以设置为get或post<br>3、urllib.error<br>在urllib库中有三个error对象<br>HTTPError：HTTP访问异常<br>URLError：url地址异常<br>ContentTooShortError：文件大小异常<br>注意，HTTPError是URLError的子类。<br>HTTPError，只有一个属性reason<br>URLError，有code，reason，headers三个属性。<br>4、urllib.robotparser<br>作用：用来解析指定网站的robots.txt文件。用来分析哪些内容是允许抓取，哪些内容是不允许的。<br>四、requests库<br>1、常用方法<br>1）函数格式：requests.get(url,[param], **kvw)<br>参数说明:<br>url：指定爬取的网络地址<br>param：需要传递的参数，参数格式：字典或字节流<br>返回值：response对象<br>属性：<br>status_code:状态码<br>headers:头信息<br>text：抓取到的页面内容<br>encoding：页面的编码格式（从headers获取到）<br>apparent_encoding：页面的编码格式（从网页内容中获取到）<br>content：二进制形式的信息<br>注意：text属性返回的页面信息，是根据encoding来显示的。所以我们在使用requests抓取页面信息时，将encoding属性进行设置，通常设为utf-8。</p>
+<p>get()函数代表了发出一个request请求，而requests.get()表示返回一个response对象</p>
+<p>2）<br>requests.request(‘GET’,url, <strong>kvw)<br>requests.request(‘HEAD’,url, </strong>kvw)<br>requests.request(‘POST’,url, <strong>kvw)<br>requests.request(‘PUT’,url, </strong>kvw)<br>requests.request(‘PATCH’,url, <strong>kvw)<br>requests.request(‘DELETE’,url, </strong>kvw)<br>*<em>kvw:控制访问的参数，为可选项<br>params:字典或字节流，作为参数添加到url中（get方法使用）<br>data：字典、字节流或文件对象（post方法使用）<br>json：JSON格式数据，作为request的内容<br>headers：字典，HTTP头信息<br>cookies：字典或cookie jar，存在于request的cookie中<br>auth：元组，支持HTTP认证<br>files：字典类型，传输文件<br>timeout：设定超时时间，秒为单位<br>stream：True/False，默认为True。获取内容立即下载。<br>cert：本地SSL整数路径<br>verfiy：True/False，默认为True。认证SSL开关<br>allow_redirects：True/False,默认为True，重定向开发<br>五、beautiful soup库<br>Html.parse，lxml:均为解析html4的内容<br>标签树分为下行遍历、上行遍历、平行遍历。<br>Soup()  等价于soup.find_all()<br>1、常用格式<br>from bs4 import BeautifulSoup<br>soup = BeautifulSoup(content, ‘html.parser’)<br>参数说明：<br>content：使用requests或其他方式，发出请求后获取到的服务器响应内容，通常应该为HTML格式。<br>html.parser:HTML4格式解析器<br>2、常用的属性<br>标签自身属性：<br>tag：标签，例如soup.tag可以将指定的标签以及内部的内容返回<br>name：标签名，例如：soup.tag.name返回指定标签的名字<br>attrs：标签属性，在HTML中一个标签可以有0到N个标签，因此标签属性为字典类型，例如：soup.tag.attrs[‘class’]<br>string：标签内的文本内容，例如：soup.tag.string<br>标签树的属性：<br>contents:例如：soup.tag.contents,将指定的标签名内所有的标签都以列表形式返回。<br>children：例如：soup.tag.children，将指定的标签中所有的子标签内容，都以迭代器形式返回，进行遍历查询。<br>descendants：例如：soup.tag.descendants,将指定的标签中所有的子标签、孙标签都以迭代器形式返回，进行遍历查询。<br>注意：BeautifulSoup对象，作为标签树的根节点，即HTML节点<br>3、常用方法<br>1）函数格式：soup.find(name,attrs)<br>参数说明：<br>name：标签名<br>attrs：标签中的属性值（属性=‘值’）<br>返回值：返回查找到第一个符合条件的标签以及内部元素<br>2）函数格式：soup.find_all(name,attrs)<br>函数参数与上面find()相同<br>返回值：返回符合条件的所有的标签，以列表形式返回。<br>4、bs4的遍历模式<br>在BeautifulSoup中，有三种遍历模式：<br>1）下行遍历<br>children、descendants、contents<br>find()、find_all()<br>2）上行遍历<br>parent、parents<br>find_parent()、find_parents()<br>3）平行遍历<br>next_sibling、next_siblings<br>previous_sibling、previous_siblings<br>find_next_sibling()、find_next_siblings()<br>find_previous_siblings()、find_previous_sibling()<br>六、正则表达式<br>1、正则表达式的概念<br>正则表达式就是使用一些特定的表达式，来表示符合其规范的字符串。<br>2、常用操作符<br>^:^ab,代表着必须是ab开头，[^ab]代表不能是a或b开头<br>$:表示字符串结尾，放在正则表达式的结尾<br>[]：代表了值域的范围，例如：[0-9][a-z]<br>{}：代表了字符出现的次数,例如：{n}代表了出现n次，{n,m}代表出现了n到m次
+</em>:代表了字符出现0-n次<br>+：代表了字符出现1-n次<br>？：代表了字符出现0-1次<br>3、常用方法<br>1）search()：会在指定的字符串中查找，是否有匹配正则表达式的内容,找到第一个匹配后结束<br>函数格式：search(pattern, str)<br>参数说明：<br>pattern：正则表达式<br>str：字符串<br>返回值：match对象，可以通过match.group(0)返回匹配正则表达式的内容<br>2）match():会从字符串的开始进行匹配<br>函数格式：match(pattern, str)<br>返回值：match对象<br>3）findall():会从指定的字符串中，匹配所有满足正则表达式的内容<br>函数格式：findall(pattern,str)<br>返回值：返回所有匹配的内容，以列表形式。<br>4）split():根据字符串匹配正则表达式的情况来切分<br>函数格式：split(pattern, str, maxsplit)<br>maxsplit：最大切分次数，剩余部分将作为一个整体输出<br>返回值：将切分后的字符串，以列表形式返回<br>5）finditer():根据字符串匹配正则表达式，返回一个迭代对象，其中的每一个对象都是match对象<br>函数格式：finditer(pattern,str)<br>返回值：返回迭代对象，其中每个对象都是match类型<br>6）sub():根据正则表达式，将指定的字符串内容替换<br>函数格式：sub(pattern, repl, string, count)<br>参数说明：<br>repl：替换匹配字符串的字符串<br>count：匹配的最大次数<br>返回值：返回替换后的字符串<br>7）compile():生成正则表达式对象<br>函数格式：compile(pattern)<br>返回值：返回一个正则表达式对象<br>4、match对象<br>1）match对象属性<br>string：待匹配的字符串<br>pos：匹配文本的开始位置<br>endpos：匹配文件的结束位置<br>re：正则表达式<br>2）match方法<br>group(0)：获得匹配后的字符串<br>start()：返回文本开始的位置<br>end()：返回文本结束的位置<br>span()：返回文本开始，结束的位置，以元组的形式返回<br>在使用split,和sub时有最大拆分次数和最大替换次数，当输入的参数大于最大的拆分次数和最大替换次数时，按最大次数进行拆分和替换，若不声明，默认为最大次数。注意：count=0时，也会按照最大次数进行替换。<br>‘’’ py</p>
+<p>#正则实现货币化<br>import re<br>def strConv(s):</p>
+<pre><code># 正向预搜索否定，判断当前位置右侧是否不能够匹配指定正则表达式
+regex = re.compile(r&quot;(\d)(?=(\d{3})+(?!\d))&quot;)
+#此处&apos;\1,&apos;中的\1代表了将,号替换到制定的group中，即编号为1的组中
+#上面的正则中，一共有三个括号，就表示有三个组
+s = regex.sub(r&quot;\1,&quot;, s)
+return s
+</code></pre><p>if <strong>name</strong> == ‘<strong>main</strong>‘:<br>    string = ‘1234567890’<br>    print(strConv(string))<br>‘’’<br>爬虫的四个步骤<br>1、解析获取数据<br>2、清洗数据<br>3、数据整理<br>4、存储数据</p>
+<hr>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/08/14/Python-Spider/" class="archive-article-date">
-  	<time datetime="2018-08-14T12:55:38.391Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-14</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/14/Python-Spider/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/09/python-base/" class="archive-article-date">
-  	<time datetime="2018-07-09T12:26:46.105Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/09/python-base/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -260,8 +371,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
